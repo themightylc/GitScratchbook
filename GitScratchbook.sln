@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TreeViewPopup", "TreeViewPopup\TreeViewPopup.vbproj", "{F3321A5C-0B9D-42DC-B977-FFD140B8443D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3321A5C-0B9D-42DC-B977-FFD140B8443D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3321A5C-0B9D-42DC-B977-FFD140B8443D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3321A5C-0B9D-42DC-B977-FFD140B8443D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3321A5C-0B9D-42DC-B977-FFD140B8443D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5B92A10-AE09-4822-84B0-8571D3093501}
+	EndGlobalSection
+EndGlobal
