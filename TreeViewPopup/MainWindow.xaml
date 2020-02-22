@@ -33,7 +33,7 @@
                 <Button Click="Do_SayHello" Content="I'm in a PopUp. I'm working." />
             </Popup>
         </StackPanel>
-        <TreeView Grid.Column="1">
+        <TreeView Grid.Column="1" Focusable="False">
             <Button Click="Do_SayHello" Content="Me, too" />
             <Label Content="This does not:" />
             <ToggleButton
