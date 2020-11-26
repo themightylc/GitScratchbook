@@ -1,0 +1,51 @@
+﻿<Window
+    x:Class="CanExecuteDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Data="clr-namespace:CanExecuteDemo.Data"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CanExecuteDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:CanExecuteDemo.ViewModel"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    DataContext="{x:Static vm:MainViewModel.Instance}"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="_DetailViewStyle" TargetType="{x:Type FrameworkElement}">
+            <Setter Property="Visibility" Value="Visible" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=_PersonListBox, Path=SelectedItem}" Value="{x:Null}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <UniformGrid Columns="2">
+        <ListView x:Name="_PersonListBox" ItemsSource="{Binding PersonViews}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding FamilyName}" Header="Family Name" />
+                    <GridViewColumn DisplayMemberBinding="{Binding GivenName}" Header="Given Name" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Gender}" Header="Gender" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid DataContext="{Binding ElementName=_PersonListBox, Path=SelectedItem}" Style="{StaticResource _DetailViewStyle}">
+
+            <StackPanel>
+                <HeaderedContentControl Header="Family Name:">
+                    <TextBox Text="{Binding FamilyName}" />
+                </HeaderedContentControl>
+                <HeaderedContentControl Header="Given Name:">
+                    <TextBox Text="{Binding GivenName}" />
+                </HeaderedContentControl>
+                <HeaderedContentControl Header="Gender:">
+                    <TextBox Text="{Binding Gender}" />
+                </HeaderedContentControl>
+                <Button Command="{Binding DisplayGenderValueCommand}">Show me the Model Value!</Button>
+            </StackPanel>
+        </Grid>
+    </UniformGrid>
+</Window>
